@@ -21,44 +21,44 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-	require 'caching_enumerator'
+require 'caching_enumerator'
 
-	enum = CachingEnumerator.new do |yielder|
-		5.times do |i|
-			puts "very expensive operation #{i}"
-			yielder.yield i
-		end
+enum = CachingEnumerator.new do |yielder|
+	5.times do |i|
+		puts "very expensive operation #{i}"
+		yielder.yield i
 	end
+end
 
-	enum.take 2
-	# very expensive operation 0
-	# very expensive operation 1
-	# => [0, 1]
+enum.take 2
+# very expensive operation 0
+# very expensive operation 1
+# => [0, 1]
 
-	enum.take 3
-	# very expensive operation 2
-	# => [0, 1, 2]
+enum.take 3
+# very expensive operation 2
+# => [0, 1, 2]
 
-	enum.next
-	# => 0
+enum.next
+# => 0
 
-	enum.next
-	# => 1
+enum.next
+# => 1
 
-	enum.next
-	# => 2
+enum.next
+# => 2
 
-	enum.next
-	# very expensive operation 3
-	# => 3
+enum.next
+# very expensive operation 3
+# => 3
 
-	enum.rewind.next
-	# => 0
+enum.rewind.next
+# => 0
 
-	# calling `reset` will clear the cache and rewind the internal pointers
-	enum.reset.next
-	# very expensive operation 0
-	# => 0
+# calling `reset` will clear the cache and rewind the internal pointers
+enum.reset.next
+# very expensive operation 0
+# => 0
 
 ```
 

@@ -24,10 +24,10 @@ Or install it yourself as:
 require 'caching_enumerator'
 
 enum = CachingEnumerator.new do |yielder|
-	5.times do |i|
-		puts "very expensive operation #{i}"
-		yielder.yield i
-	end
+  5.times do |i|
+    puts "very expensive operation #{i}"
+      yielder.yield i
+    end
 end
 
 enum.take 2

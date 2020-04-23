@@ -1,4 +1,4 @@
-# CachingEnumerator
+# CachingEnumerator [![Build Status](https://travis-ci.org/cyclotron3k/caching_enumerator.svg?branch=master)](https://travis-ci.org/cyclotron3k/caching_enumerator)
 
 A caching wrapper for Enumerator
 

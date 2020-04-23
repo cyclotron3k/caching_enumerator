@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "caching_enumerator/version"
+require 'caching_enumerator'
 
 Gem::Specification.new do |spec|
 	spec.name          = "caching_enumerator"
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 	spec.require_paths = ["lib"]
 
 	spec.add_development_dependency "minitest", "~> 5.0"
+	spec.add_development_dependency "rake"
 end
